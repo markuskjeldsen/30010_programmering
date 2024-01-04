@@ -2,5 +2,5 @@
 ../Src/sin_lut.c:23:6:rotateVector	3
 ../Src/sin_lut.c:54:9:expand	1
 ../Src/sin_lut.c:60:6:printFix	2
-../Src/sin_lut.c:74:7:sine	3
-../Src/sin_lut.c:125:7:cosine	1
+../Src/sin_lut.c:75:7:sine	3
+../Src/sin_lut.c:98:7:cosine	1
