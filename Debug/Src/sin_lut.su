@@ -1,6 +1,0 @@
-../Src/sin_lut.c:17:6:initVector	16	static
-../Src/sin_lut.c:23:6:rotateVector	32	static
-../Src/sin_lut.c:54:9:expand	16	static
-../Src/sin_lut.c:60:6:printFix	16	static
-../Src/sin_lut.c:75:7:sine	40	static
-../Src/sin_lut.c:98:7:cosine	16	static

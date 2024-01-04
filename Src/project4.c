@@ -34,9 +34,19 @@ for (int i = 0; i < h; i++) {
             }
             }
 
-        gotoxy(0,2);
+
+        for(int k = 1; k < h-2; k++){
+        gotoxy(1,k+1);
         printf("%c", 186);
+        gotoxy(w,k+1);
+        printf("%c", 186);
+        }
+
         printf("\n");
+
+
+
+
     } else if (i == h-1) {
         for (int j = 0; j < w; j++) {
             if (j == 0) {

@@ -17,7 +17,7 @@ int main(void)
 
 
 
-	drawwindow(13,13);
+	drawWindow(20,13);
 
 
 
