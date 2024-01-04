@@ -24,6 +24,7 @@
 "./Src/ansi.o"
 "./Src/main.o"
 "./Src/project4.o"
+"./Src/project5.o"
 "./Src/sin_lut.o"
 "./Src/syscalls.o"
 "./Src/sysmem.o"

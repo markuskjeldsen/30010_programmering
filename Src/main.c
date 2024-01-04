@@ -3,51 +3,32 @@
 #include "ansi.h"
 #include "sin_lut.h"
 #include "project4.h"
-#include <time.h>
+#include "project5.h"
+
 
 
 
 
 int main(void)
 {
-
-
-
 	// Setup communication with the PC
 	uart_init(115200);
 
 
+	setup();
+
+	ledsetup();
 
 
-	drawWindow(20,13);
-
-	ball p;
-
-	ballInit(&p);
-
-
-
-
-
-	int bounce = 0;
+	char output;
 
 	while (1) {
-		drawWindow(50,30);
-		printf("%d",bounce);
-		drawBall(&p);
 
-		int wait = 0;
 
-		if (wait < 20){
-		bounce = bounce + collisionhandler(&p, 50, 30);
-		ballUpdate(&p);
-		}
 
-		wait++;
-		gotoxy(0,31);
-		for(int i = 0; i < 500; i++){
-		printf("%d",i);
-		}
+		output = readJoystick();
+		printf("%4X \n", output);
+		setLed(output);
 
 
 	}

@@ -6,19 +6,6 @@
  */
 #include "project4.h"
 #include "ansi.h"
-#include <time.h>
-
-void delay(int number_of_seconds)
-{
-    // Converting time into milli_seconds
-    int milli_seconds = 1000 * number_of_seconds;
-
-    // Storing start time
-    clock_t start_time = clock();
-
-    // looping till required time is not achieved
-    while (clock() < start_time + milli_seconds);
-}
 
 
 
@@ -52,7 +39,7 @@ int collisionhandler(ball * p, int w, int h){
 		bounce++;
 	}
 
-	if (ypos > h || ypos < 1){
+	if (ypos > h-1 || ypos < 1){
 		p->yspeed = p->yspeed * (-1);
 		bounce++;
 	}
