@@ -6,7 +6,60 @@
  */
 #include "project4.h"
 #include "ansi.h"
+#include <time.h>
 
+void delay(int number_of_seconds)
+{
+    // Converting time into milli_seconds
+    int milli_seconds = 1000 * number_of_seconds;
+
+    // Storing start time
+    clock_t start_time = clock();
+
+    // looping till required time is not achieved
+    while (clock() < start_time + milli_seconds);
+}
+
+
+
+void ballUpdate(ball * p){
+	p->x += p->xspeed;
+	p->y +=	p->yspeed;
+}
+
+void ballInit(ball * p){
+	p->x = 3;
+	p->y = 3;
+	p->xspeed = 2;
+	p->yspeed = 3;
+}
+
+
+
+void drawBall(ball *p){
+	gotoxy( (*p).x,(*p).y);
+	printf("o");
+
+}
+
+int collisionhandler(ball * p, int w, int h){
+	int xpos = p->x + p->xspeed;
+	int ypos = p->y + p->yspeed;
+	int bounce = 0;
+
+	if (xpos > w || xpos < 1){
+		p->xspeed = p->xspeed * (-1);
+		bounce++;
+	}
+
+	if (ypos > h || ypos < 1){
+		p->yspeed = p->yspeed * (-1);
+		bounce++;
+	}
+
+	return bounce;
+
+}
 
 
 
@@ -37,9 +90,9 @@ for (int i = 0; i < h; i++) {
 
         for(int k = 1; k < h-2; k++){
         gotoxy(1,k+1);
-        printf("%c", 186);
+        printf("%c", vline);
         gotoxy(w,k+1);
-        printf("%c", 186);
+        printf("%c", vline);
         }
 
         printf("\n");
@@ -62,6 +115,8 @@ for (int i = 0; i < h; i++) {
     }
 }
 
+
+return 0;
 
 }
 
