@@ -6,6 +6,14 @@
 #include "project5.h"
 
 
+uint32_t counting_time = 0;
+
+
+void TIM1_BRK_TIM15_IRQHandler(void){
+	TIM15->SR &= ~(0x0001);
+	counting_time++;
+}
+
 
 
 
@@ -17,19 +25,39 @@ int main(void)
 
 	setup();
 
-	ledsetup();
+
+	timesetup();
 
 
-	char output;
+	char output = 0;
+	char temp = 1;
+
+	int time = counting_time;
+	int time_saved;
+
 
 	while (1) {
 
+		char output = readJoystick();
 
 
-		output = readJoystick();
-		printf("%4X \n", output);
-		setLed(output);
+		if(output && output != temp){
+		int time = counting_time - time_saved;
+
+		printf("current time %ld . %2d\n", counting_time/100 , counting_time%100 );
+
+		printf("time saved %ld . %2d\n", time_saved/100 , time_saved%100 );
+
+		printf("difference is %ld . %2d\n",time/100, time%100  );
+		temp = output;
+		time_saved = counting_time;
+
+
+		}
+
+
 
 
 	}
-}
+
+	}
