@@ -22,6 +22,7 @@
 "./SPL/src/stm32f30x_wwdg.o"
 "./Src/30010_io.o"
 "./Src/ansi.o"
+"./Src/charset.o"
 "./Src/main.o"
 "./Src/project4.o"
 "./Src/project5.o"

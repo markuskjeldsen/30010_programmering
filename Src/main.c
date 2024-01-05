@@ -4,9 +4,11 @@
 #include "sin_lut.h"
 #include "project4.h"
 #include "project5.h"
+#include <string.h>
+#include "charset.h"
 
 
-uint32_t counting_time = 0;
+int counting_time = 0;
 
 
 void TIM1_BRK_TIM15_IRQHandler(void){
@@ -17,47 +19,39 @@ void TIM1_BRK_TIM15_IRQHandler(void){
 
 
 
+
+
 int main(void)
 {
+
 	// Setup communication with the PC
 	uart_init(115200);
-
-
+	lcd_init();
+	lcd_reset();
 	setup();
 
 
-	timesetup();
+	uint8_t arr[512];
+	memset(arr,0,512);
+	lcd_push_buffer(arr);
+	uint8_t array[512];
+
+	memset(array,0,512);
 
 
-	char output = 0;
-	char temp = 1;
+	char i[] = "HEJiMEDiDIGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG";
 
-	int time = counting_time;
-	int time_saved;
+	for(int p = 0; p < strlen(i); p++){
+
+		arr[p] = (int) i[p];
+	}
+
+
+	displayString(arr,0,0);
+
 
 
 	while (1) {
 
-		char output = readJoystick();
-
-
-		if(output && output != temp){
-		int time = counting_time - time_saved;
-
-		printf("current time %ld . %2d\n", counting_time/100 , counting_time%100 );
-
-		printf("time saved %ld . %2d\n", time_saved/100 , time_saved%100 );
-
-		printf("difference is %ld . %2d\n",time/100, time%100  );
-		temp = output;
-		time_saved = counting_time;
-
-
-		}
-
-
-
-
 	}
-
-	}
+}

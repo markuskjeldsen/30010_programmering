@@ -7,6 +7,7 @@
 C_SRCS += \
 ../Src/30010_io.c \
 ../Src/ansi.c \
+../Src/charset.c \
 ../Src/main.c \
 ../Src/project4.c \
 ../Src/project5.c \
@@ -19,6 +20,7 @@ C_SRCS += \
 OBJS += \
 ./Src/30010_io.o \
 ./Src/ansi.o \
+./Src/charset.o \
 ./Src/main.o \
 ./Src/project4.o \
 ./Src/project5.o \
@@ -31,6 +33,7 @@ OBJS += \
 C_DEPS += \
 ./Src/30010_io.d \
 ./Src/ansi.d \
+./Src/charset.d \
 ./Src/main.d \
 ./Src/project4.d \
 ./Src/project5.d \
@@ -50,7 +53,7 @@ Src/main.o: ../Src/main.c Src/subdir.mk
 clean: clean-Src
 
 clean-Src:
-	-$(RM) ./Src/30010_io.cyclo ./Src/30010_io.d ./Src/30010_io.o ./Src/30010_io.su ./Src/ansi.cyclo ./Src/ansi.d ./Src/ansi.o ./Src/ansi.su ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/project4.cyclo ./Src/project4.d ./Src/project4.o ./Src/project4.su ./Src/project5.cyclo ./Src/project5.d ./Src/project5.o ./Src/project5.su ./Src/sin_lut.cyclo ./Src/sin_lut.d ./Src/sin_lut.o ./Src/sin_lut.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su ./Src/system_stm32f30x.cyclo ./Src/system_stm32f30x.d ./Src/system_stm32f30x.o ./Src/system_stm32f30x.su ./Src/timer.cyclo ./Src/timer.d ./Src/timer.o ./Src/timer.su
+	-$(RM) ./Src/30010_io.cyclo ./Src/30010_io.d ./Src/30010_io.o ./Src/30010_io.su ./Src/ansi.cyclo ./Src/ansi.d ./Src/ansi.o ./Src/ansi.su ./Src/charset.cyclo ./Src/charset.d ./Src/charset.o ./Src/charset.su ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/project4.cyclo ./Src/project4.d ./Src/project4.o ./Src/project4.su ./Src/project5.cyclo ./Src/project5.d ./Src/project5.o ./Src/project5.su ./Src/sin_lut.cyclo ./Src/sin_lut.d ./Src/sin_lut.o ./Src/sin_lut.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su ./Src/system_stm32f30x.cyclo ./Src/system_stm32f30x.d ./Src/system_stm32f30x.o ./Src/system_stm32f30x.su ./Src/timer.cyclo ./Src/timer.d ./Src/timer.o ./Src/timer.su
 
 .PHONY: clean-Src
 
