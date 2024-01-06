@@ -5,15 +5,18 @@
 #include "project4.h"
 #include "project5.h"
 #include <string.h>
+#include "timer.h"
 #include "charset.h"
+#include "project8.h"
+#include "project9.h"
 
-
-int counting_time = 0;
+int counter = 0;
 
 
 void TIM1_BRK_TIM15_IRQHandler(void){
 	TIM15->SR &= ~(0x0001);
-	counting_time++;
+	counter++;
+
 }
 
 
@@ -26,32 +29,81 @@ int main(void)
 
 	// Setup communication with the PC
 	uart_init(115200);
-	lcd_init();
-	lcd_reset();
-	setup();
+
+	timesetup();
+	uint16_t data;
+	uint16_t data1;
+	ADCsetup();
+	speakerSetup();
 
 
-	uint8_t arr[512];
-	memset(arr,0,512);
-	lcd_push_buffer(arr);
-	uint8_t array[512];
 
-	memset(array,0,512);
+	setFreq(50);
 
 
-	char i[] = "HEJiMEDiDIGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG";
 
-	for(int p = 0; p < strlen(i); p++){
+	setFreq(30);
+	int diff = 15;
 
-		arr[p] = (int) i[p];
-	}
-
-
-	displayString(arr,0,0);
 
 
 
 	while (1) {
+
+
+/*
+		data = read_ADC1_1();//*3300) >> 12;
+
+		data1 = read_ADC1_2();//*3300) >> 12;
+		diff = data >> 6;
+
+		uint16_t previous;
+		if (data1 > (previous + diff) || data1 < (previous - diff)){
+
+			printf("Value = %ld   %ld   \n", data1 , diff );
+
+
+
+			setFreq(data1);
+			previous = data1;
+		}
+*/
+		setFreq(293);
+		wait(50);
+		setFreq(440);
+		wait(50);
+		setFreq(587);
+		wait(100);
+		setFreq(293);
+		wait(50);
+		setFreq(440);
+		wait(50);
+		setFreq(587);
+		wait(100);
+
+
+		setFreq(659);
+		wait(30);
+		setFreq(698);
+		wait(20);
+		setFreq(659);
+		wait(20);
+		setFreq(698);
+		wait(20);
+		setFreq(659);
+		wait(20);
+		setFreq(523);
+		wait(40);
+		setFreq(440);
+		wait(60);
+
+		setFreq(0);
+		wait(1000);
+
+
+
+
+
 
 	}
 }

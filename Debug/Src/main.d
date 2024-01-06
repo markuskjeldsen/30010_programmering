@@ -34,7 +34,11 @@ Src/main.o: ../Src/main.c \
  /home/markus/STM32CubeIDE/workspace_1.14.0/BaseProject/Inc/sin_lut.h \
  /home/markus/STM32CubeIDE/workspace_1.14.0/BaseProject/Inc/project4.h \
  /home/markus/STM32CubeIDE/workspace_1.14.0/BaseProject/Inc/project5.h \
- /home/markus/STM32CubeIDE/workspace_1.14.0/BaseProject/Inc/charset.h
+ /home/markus/STM32CubeIDE/workspace_1.14.0/BaseProject/Inc/timer.h \
+ /home/markus/STM32CubeIDE/workspace_1.14.0/BaseProject/Inc/charset.h \
+ /home/markus/STM32CubeIDE/workspace_1.14.0/BaseProject/Inc/project8.h \
+ /home/markus/STM32CubeIDE/workspace_1.14.0/BaseProject/Inc/project9.h \
+ /home/markus/STM32CubeIDE/workspace_1.14.0/BaseProject/Inc/stm32f30x.h
 /home/markus/STM32CubeIDE/workspace_1.14.0/BaseProject/Inc/stm32f30x_conf.h:
 /home/markus/STM32CubeIDE/workspace_1.14.0/BaseProject/SPL/inc/stm32f30x_adc.h:
 /home/markus/STM32CubeIDE/workspace_1.14.0/BaseProject/Inc/stm32f30x.h:
@@ -70,4 +74,8 @@ Src/main.o: ../Src/main.c \
 /home/markus/STM32CubeIDE/workspace_1.14.0/BaseProject/Inc/sin_lut.h:
 /home/markus/STM32CubeIDE/workspace_1.14.0/BaseProject/Inc/project4.h:
 /home/markus/STM32CubeIDE/workspace_1.14.0/BaseProject/Inc/project5.h:
+/home/markus/STM32CubeIDE/workspace_1.14.0/BaseProject/Inc/timer.h:
 /home/markus/STM32CubeIDE/workspace_1.14.0/BaseProject/Inc/charset.h:
+/home/markus/STM32CubeIDE/workspace_1.14.0/BaseProject/Inc/project8.h:
+/home/markus/STM32CubeIDE/workspace_1.14.0/BaseProject/Inc/project9.h:
+/home/markus/STM32CubeIDE/workspace_1.14.0/BaseProject/Inc/stm32f30x.h:

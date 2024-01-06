@@ -9,6 +9,8 @@
 #include "stm32f30x.h"
 
 
+extern int counter;
+
 
 
 void timesetup(){
@@ -26,6 +28,15 @@ void timesetup(){
 
 	NVIC_SetPriority(TIM1_BRK_TIM15_IRQn, 5);
 	NVIC_EnableIRQ(TIM1_BRK_TIM15_IRQn);
+
+}
+
+
+void wait(int milisec){
+	int current = counter;
+	while(current + milisec > counter){
+
+	}
 
 }
 

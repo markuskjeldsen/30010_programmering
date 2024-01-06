@@ -3,18 +3,29 @@
 #include <stdint.h>
 
 
-void displayString(uint8_t* arr, int x, int y){
-	int length = strlen(arr);
+void displayString(uint8_t* array, int x, int y){
+	int length = strlen(array);
+	int arr[512];
+
+	for(int p = 0; p < length; p++){
+		arr[p] = ((uint8_t) array[p] - 32);
+	}
+
+	x = x%(128-(length+1)*4);
+	y = y%4;
+
+
+
 	uint8_t format[512];
 	memset(format,0,512);
 
 	for(int i = 0; i < length ; i++){
 
-		format[ i*5     ] = character_data[ arr[i] ][0];
-		format[(i*5) + 1] = character_data[ arr[i] ][1];
-		format[(i*5) + 2] = character_data[ arr[i] ][2];
-		format[(i*5) + 3] = character_data[ arr[i] ][3];
-		format[(i*5) + 4] = character_data[ arr[i] ][4];
+		format[ i*5  + 0 + x + y*128] = character_data[ arr[i] ][0];
+		format[(i*5) + 1 + x + y*128] = character_data[ arr[i] ][1];
+		format[(i*5) + 2 + x + y*128] = character_data[ arr[i] ][2];
+		format[(i*5) + 3 + x + y*128] = character_data[ arr[i] ][3];
+		format[(i*5) + 4 + x + y*128] = character_data[ arr[i] ][4];
 
 	}
 	lcd_push_buffer(format);

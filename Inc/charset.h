@@ -44,7 +44,7 @@ extern const char character_data[95][5];
 
 
 
-void displayString(uint8_t* arr, int x, int y);
+void displayString(uint8_t* array, int x, int y);
 
 
 

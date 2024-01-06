@@ -26,6 +26,8 @@
 "./Src/main.o"
 "./Src/project4.o"
 "./Src/project5.o"
+"./Src/project8.o"
+"./Src/project9.o"
 "./Src/sin_lut.o"
 "./Src/syscalls.o"
 "./Src/sysmem.o"
